@@ -1,10 +1,10 @@
 import { useState, FormEvent } from "react";
-import useFadeIn from "@/hooks/useFadeIn";
 import { toast } from "sonner";
 import { Send } from "lucide-react";
+import { motion } from "framer-motion";
+import FloatingOrbs from "@/components/FloatingOrbs";
 
 const LeadCaptureForm = () => {
-  const ref = useFadeIn();
   const [form, setForm] = useState({ name: "", email: "", phone: "", goals: "" });
 
   const handleSubmit = (e: FormEvent) => {
@@ -15,11 +15,15 @@ const LeadCaptureForm = () => {
 
   return (
     <section id="signup" className="py-24 bg-muted relative overflow-hidden">
-      {/* Decorative circles */}
-      <div className="absolute top-10 right-10 w-32 h-32 rounded-full opacity-10" style={{ background: "linear-gradient(135deg, hsl(38,70%,55%), hsl(30,60%,45%))" }} />
-      <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full opacity-10" style={{ background: "linear-gradient(135deg, hsl(38,70%,55%), hsl(30,60%,45%))" }} />
+      <FloatingOrbs count={5} seed={5} />
 
-      <div ref={ref} className="container mx-auto px-6 section-fade-in max-w-2xl relative z-10">
+      <motion.div
+        className="container mx-auto px-6 max-w-2xl relative z-10 pointer-events-auto"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <div className="text-center mb-12">
           <p className="text-4xl mb-4">🙋‍♀️</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -78,7 +82,7 @@ const LeadCaptureForm = () => {
             Let's Get Started!
           </button>
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 };

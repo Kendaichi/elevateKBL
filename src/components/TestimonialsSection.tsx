@@ -1,5 +1,6 @@
 import { Quote, Star } from "lucide-react";
-import useFadeIn from "@/hooks/useFadeIn";
+import { motion } from "framer-motion";
+import FloatingOrbs from "@/components/FloatingOrbs";
 
 const testimonials = [
   {
@@ -23,22 +24,36 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
-  const ref = useFadeIn();
-
   return (
-    <section id="testimonials" className="py-24 bg-background">
-      <div ref={ref} className="container mx-auto px-6 section-fade-in">
-        <p className="font-body text-sm font-semibold text-center gold-accent uppercase tracking-widest mb-3">Real stories, real results</p>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
-          Trusted by Women Who Mean Business 💪
-        </h2>
-        <p className="font-body text-center text-muted-foreground max-w-lg mx-auto mb-16">
-          Don't just take our word for it — hear from the women who are already crushing it.
-        </p>
+    <section id="testimonials" className="py-24 bg-background relative overflow-hidden">
+      <FloatingOrbs count={5} seed={4} />
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <p className="font-body text-sm font-semibold gold-accent uppercase tracking-widest mb-3">Real stories, real results</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Trusted by Women Who Mean Business 💪
+          </h2>
+          <p className="font-body text-muted-foreground max-w-lg mx-auto">
+            Don't just take our word for it — hear from the women who are already crushing it.
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t) => (
-            <div key={t.name} className="card-elevated relative">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={t.name}
+              className="card-elevated relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+            >
               <Quote size={28} className="quote-icon mb-4 opacity-40" />
               <div className="flex gap-1 mb-4">
                 {[...Array(t.stars)].map((_, i) => (
@@ -57,7 +72,7 @@ const TestimonialsSection = () => {
                   <p className="font-body text-xs text-muted-foreground">{t.role}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
