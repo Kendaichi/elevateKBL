@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
@@ -34,11 +34,15 @@ const Navbar = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className={`font-heading text-2xl font-bold tracking-wide flex items-center gap-2 ${
+          className={`font-heading text-2xl font-bold tracking-wide flex items-center gap-2.5 ${
             scrolled ? "text-foreground" : "text-white"
           }`}
         >
-          <Sparkles size={20} className="gold-accent" />
+          <img
+            src="/elevatekbl-favicon.svg"
+            alt="ElevateKBL logo"
+            className="w-8 h-8 rounded-lg"
+          />
           ElevateKBL
         </motion.a>
 
