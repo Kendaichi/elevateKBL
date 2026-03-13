@@ -37,7 +37,7 @@ const HeroSection = () => (
     {/* Soft wave divider */}
     <div className="absolute bottom-0 left-0 right-0">
       <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-        <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,70 1440,60 L1440,100 L0,100 Z" fill="hsl(40,20%,90%)" />
+        <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,70 1440,60 L1440,100 L0,100 Z" fill="hsl(43,29%,95%)" />
       </svg>
     </div>
   </section>
