@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +25,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="font-heading text-2xl font-bold text-foreground tracking-wide">
+        <a href="#" className="font-heading text-2xl font-bold text-foreground tracking-wide flex items-center gap-2">
+          <Sparkles size={20} className="gold-accent" />
           ElevateKBL
         </a>
 
@@ -35,13 +36,13 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="font-body text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="font-body text-sm font-medium text-muted-foreground hover:text-foreground hover:scale-105 transition-all duration-200"
             >
               {link.label}
             </a>
           ))}
-          <a href="#signup" className="btn-gold text-sm">
-            Get Started
+          <a href="#signup" className="btn-gold text-sm inline-flex items-center gap-1.5">
+            Get Started ✨
           </a>
         </div>
 
@@ -69,7 +70,7 @@ const Navbar = () => {
             </a>
           ))}
           <a href="#signup" onClick={() => setMenuOpen(false)} className="btn-gold inline-block mt-2 text-sm">
-            Get Started
+            Get Started ✨
           </a>
         </div>
       )}
