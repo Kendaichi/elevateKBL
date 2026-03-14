@@ -9,7 +9,7 @@ const HeroSection = () => (
     className="relative min-h-screen flex items-center justify-center overflow-hidden"
   >
     <div
-      className="absolute inset-0 bg-cover bg-center"
+      className="absolute inset-0 bg-cover bg-[25%_center] md:bg-center"
       style={{ backgroundImage: `url(${heroBg})` }}
     />
     <div className="absolute inset-0 bg-primary/70" />
