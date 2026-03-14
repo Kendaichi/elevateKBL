@@ -1,5 +1,6 @@
 import { useState, FormEvent } from "react";
-import useFadeIn from "@/hooks/useFadeIn";
+import { motion } from "framer-motion";
+import FloatingOrbs from "@/components/FloatingOrbs";
 import { toast } from "sonner";
 import {
   Send,
@@ -41,7 +42,6 @@ const INITIAL: FormData = {
 };
 
 const ElevateApplication = () => {
-  const ref = useFadeIn();
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>(INITIAL);
   const [submitted, setSubmitted] = useState(false);
@@ -236,7 +236,8 @@ const ElevateApplication = () => {
   if (submitted) {
     return (
       <section id="signup" className="py-24 bg-muted relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-2xl text-center">
+        <FloatingOrbs count={5} seed={5} />
+        <div className="container mx-auto px-6 max-w-2xl text-center relative z-10">
           <div className="bg-card rounded-2xl p-12 shadow-lg border border-border">
             <CheckCircle size={56} className="gold-accent mx-auto mb-6" />
             <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
@@ -256,25 +257,14 @@ const ElevateApplication = () => {
 
   return (
     <section id="signup" className="py-24 bg-muted relative overflow-hidden">
-      {/* Decorative circles */}
-      <div
-        className="absolute top-10 right-10 w-32 h-32 rounded-full opacity-10"
-        style={{
-          background:
-            "linear-gradient(135deg, hsl(38,70%,55%), hsl(30,60%,45%))",
-        }}
-      />
-      <div
-        className="absolute bottom-10 left-10 w-20 h-20 rounded-full opacity-10"
-        style={{
-          background:
-            "linear-gradient(135deg, hsl(38,70%,55%), hsl(30,60%,45%))",
-        }}
-      />
+      <FloatingOrbs count={5} seed={5} />
 
-      <div
-        ref={ref}
-        className="container mx-auto px-6 section-fade-in max-w-2xl relative z-10"
+      <motion.div
+        className="container mx-auto px-6 max-w-2xl relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
       >
         {/* Header */}
         <div className="text-center mb-10">
@@ -358,7 +348,7 @@ const ElevateApplication = () => {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 };
