@@ -1,11 +1,14 @@
-import coachPhoto from "@/assets/coach-photo.jpg";
+import coachPhoto from "@/assets/coach-photo.png";
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import FloatingOrbs from "@/components/FloatingOrbs";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-background relative overflow-hidden">
+    <section
+      id="about"
+      className="py-24 bg-background relative overflow-hidden"
+    >
       <FloatingOrbs count={5} seed={2} />
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
