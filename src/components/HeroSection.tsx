@@ -1,4 +1,4 @@
-import heroBg from "@/assets/hero-bg.png";
+import heroBg from "@/assets/hero-bg.webp";
 import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 // import FloatingOrbs from "@/components/FloatingOrbs";

@@ -1,4 +1,4 @@
-import coachPhoto from "@/assets/coach-photo.png";
+import coachPhoto from "@/assets/coach-photo.webp";
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import FloatingOrbs from "@/components/FloatingOrbs";
@@ -66,6 +66,8 @@ const AboutSection = () => {
               <img
                 src={coachPhoto}
                 alt="Kiona - High-Ticket Sales Coach"
+                loading="lazy"
+                decoding="async"
                 className="rounded-3xl shadow-2xl max-w-sm w-full object-cover gold-border border-2"
               />
               <div
