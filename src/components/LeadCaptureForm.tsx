@@ -4,13 +4,27 @@ import { Send } from "lucide-react";
 import { motion } from "framer-motion";
 import FloatingOrbs from "@/components/FloatingOrbs";
 
+const SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL;
+
 const LeadCaptureForm = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", goals: "" });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    toast.success("You're amazing! 🎉 We'll be in touch soon.");
-    setForm({ name: "", email: "", phone: "", goals: "" });
+    setLoading(true);
+    try {
+      await fetch(SHEET_URL, {
+        method: "POST",
+        body: JSON.stringify({ form_type: "lead", ...form }),
+      });
+      toast.success("You're amazing! 🎉 We'll be in touch soon.");
+      setForm({ name: "", email: "", phone: "", goals: "" });
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -77,9 +91,9 @@ const LeadCaptureForm = () => {
               placeholder="Tell us your big dreams..."
             />
           </div>
-          <button type="submit" className="btn-gold w-full text-base inline-flex items-center justify-center gap-2 py-4">
+          <button type="submit" disabled={loading} className="btn-gold w-full text-base inline-flex items-center justify-center gap-2 py-4 disabled:opacity-60">
             <Send size={18} />
-            Let's Get Started!
+            {loading ? "Sending..." : "Let's Get Started!"}
           </button>
         </form>
       </motion.div>

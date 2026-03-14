@@ -41,10 +41,13 @@ const INITIAL: FormData = {
   contactMethod: "",
 };
 
+const SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL;
+
 const ElevateApplication = () => {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>(INITIAL);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const set = (field: keyof FormData) => (val: string) =>
     setForm((f) => ({ ...f, [field]: val }));
@@ -222,15 +225,26 @@ const ElevateApplication = () => {
     return false;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (step < steps.length - 1) {
       if (canNext()) setStep(step + 1);
       return;
     }
     if (!canNext()) return;
-    setSubmitted(true);
-    toast.success("Application submitted! 🎉 We'll be in touch soon.");
+    setLoading(true);
+    try {
+      await fetch(SHEET_URL, {
+        method: "POST",
+        body: JSON.stringify({ form_type: "application", ...form }),
+      });
+      setSubmitted(true);
+      toast.success("Application submitted! 🎉 We'll be in touch soon.");
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -331,7 +345,7 @@ const ElevateApplication = () => {
 
             <button
               type="submit"
-              disabled={!canNext()}
+              disabled={!canNext() || loading}
               className="btn-gold text-sm inline-flex items-center gap-2 py-3 disabled:opacity-40 disabled:hover:scale-100 disabled:hover:shadow-none"
             >
               {step < steps.length - 1 ? (
@@ -339,6 +353,8 @@ const ElevateApplication = () => {
                   Next
                   <ArrowRight size={16} />
                 </>
+              ) : loading ? (
+                "Submitting..."
               ) : (
                 <>
                   <Send size={16} />
