@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import WhyJoinSection from "@/components/WhyJoinSection";
 import AboutSection from "@/components/AboutSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import LeadCaptureForm from "@/components/LeadCaptureForm";
+import ElevateApplication from "@/components/ElevateApplication";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,7 +14,7 @@ const Index = () => {
       <AboutSection />
       <WhyJoinSection />
       <TestimonialsSection />
-      <LeadCaptureForm />
+      <ElevateApplication />
       <Footer />
     </>
   );
