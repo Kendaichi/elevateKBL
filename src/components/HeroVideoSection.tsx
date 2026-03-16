@@ -51,7 +51,8 @@ export default function HeroVideoSection() {
           width: "500px",
           height: "500px",
           borderRadius: "50%",
-          background: "radial-gradient(circle at 40% 40%, hsla(38,70%,55%,0.18), transparent 70%)",
+          background:
+            "radial-gradient(circle at 40% 40%, hsla(38,70%,55%,0.18), transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -64,12 +65,16 @@ export default function HeroVideoSection() {
           width: "420px",
           height: "420px",
           borderRadius: "50%",
-          background: "radial-gradient(circle at 60% 60%, hsla(30,60%,45%,0.15), transparent 70%)",
+          background:
+            "radial-gradient(circle at 60% 60%, hsla(30,60%,45%,0.15), transparent 70%)",
           pointerEvents: "none",
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-6" style={{ maxWidth: "960px" }}>
+      <div
+        className="relative z-10 container mx-auto px-6"
+        style={{ maxWidth: "960px" }}
+      >
         {/* ── Headline ── */}
         <motion.div
           initial={{ opacity: 0, y: 36 }}
@@ -80,7 +85,11 @@ export default function HeroVideoSection() {
         >
           <h2
             className="font-heading font-bold text-primary-foreground"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.25, marginBottom: "1.25rem" }}
+            style={{
+              fontSize: "clamp(1.75rem, 4vw, 3rem)",
+              lineHeight: 1.25,
+              marginBottom: "1.25rem",
+            }}
           >
             Your next chapter starts with one decision.
           </h2>
@@ -198,7 +207,10 @@ export default function HeroVideoSection() {
               {/* Sound toggle button */}
               <motion.button
                 onClick={toggleSound}
-                whileHover={{ scale: 1.06, boxShadow: `0 6px 28px rgba(186,117,23,0.7)` }}
+                whileHover={{
+                  scale: 1.06,
+                  boxShadow: `0 6px 28px rgba(186,117,23,0.7)`,
+                }}
                 whileTap={{ scale: 0.94 }}
                 aria-label={muted ? "Unmute video" : "Mute video"}
                 style={{
@@ -223,7 +235,7 @@ export default function HeroVideoSection() {
                 }}
               >
                 {muted ? <VolumeX size={15} /> : <Volume2 size={15} />}
-                {muted ? "▶  Tap to hear Kiona" : "Sound On"}
+                {muted ? "Tap to hear Kiona" : "Sound On"}
               </motion.button>
             </div>
           </div>
@@ -235,7 +247,11 @@ export default function HeroVideoSection() {
         className="absolute bottom-0 left-0 right-0 pointer-events-none"
         style={{ lineHeight: 0 }}
       >
-        <svg viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg" className="w-full">
+        <svg
+          viewBox="0 0 1440 90"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full"
+        >
           <path
             d="M0,55 C280,95 580,10 880,55 C1080,82 1280,65 1440,50 L1440,90 L0,90 Z"
             fill="hsl(43,29%,95%)"
