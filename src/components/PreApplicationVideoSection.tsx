@@ -15,8 +15,8 @@ const TEXT_DARK = "#2C1A00";
 const TEXT_MUTED = "#7A6040";
 
 const VIDEO_ID = "uhUpYR7Ebp4";
-// YouTube's highest-res thumbnail — used as the poster before play
-const THUMBNAIL = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
+// hqdefault always exists; maxresdefault is often missing for unlisted videos
+const THUMBNAIL = `https://img.youtube.com/vi/${VIDEO_ID}/hqdefault.jpg`;
 // Once play is clicked the iframe loads with autoplay
 const EMBED_SRC = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0&playsinline=1`;
 
