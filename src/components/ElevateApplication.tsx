@@ -236,7 +236,11 @@ const ElevateApplication = () => {
     try {
       await fetch(SHEET_URL, {
         method: "POST",
-        body: JSON.stringify({ form_type: "application", ...form }),
+        body: JSON.stringify({
+          form_type: "application",
+          sheet_name: "elevateKBL",
+          ...form,
+        }),
       });
       setSubmitted(true);
       toast.success("Application submitted! 🎉 We'll be in touch soon.");
