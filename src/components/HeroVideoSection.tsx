@@ -12,7 +12,7 @@ import FloatingOrbs from "@/components/FloatingOrbs";
 const GOLD = "#BA7517";
 const GOLD_LIGHT = "#EF9F27";
 
-const VIDEO_ID = "uhUpYR7Ebp4";
+const VIDEO_ID = "sKmkwU9NTMg";
 const EMBED_SRC = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&playsinline=1&rel=0&enablejsapi=1`;
 
 export default function HeroVideoSection() {

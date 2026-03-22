@@ -14,7 +14,7 @@ const CREAM = "#F5F0E8";
 const TEXT_DARK = "#2C1A00";
 const TEXT_MUTED = "#7A6040";
 
-const VIDEO_ID = "uhUpYR7Ebp4";
+const VIDEO_ID = "jFuFmBLYjzw";
 // hqdefault always exists; maxresdefault is often missing for unlisted videos
 const THUMBNAIL = `https://img.youtube.com/vi/${VIDEO_ID}/hqdefault.jpg`;
 // Once play is clicked the iframe loads with autoplay
@@ -44,7 +44,8 @@ export default function PreApplicationVideoSection() {
           width: "480px",
           height: "480px",
           borderRadius: "50%",
-          background: "radial-gradient(circle at 50% 50%, hsla(38,65%,72%,0.22), transparent 70%)",
+          background:
+            "radial-gradient(circle at 50% 50%, hsla(38,65%,72%,0.22), transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -57,7 +58,8 @@ export default function PreApplicationVideoSection() {
           width: "340px",
           height: "340px",
           borderRadius: "50%",
-          background: "radial-gradient(circle at 50% 50%, hsla(30,60%,65%,0.18), transparent 70%)",
+          background:
+            "radial-gradient(circle at 50% 50%, hsla(30,60%,65%,0.18), transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -127,7 +129,8 @@ export default function PreApplicationVideoSection() {
             margin: "0 auto 2.5rem",
           }}
         >
-          Watch this before you apply — Kiona will walk you through exactly what to expect.
+          Watch this before you apply — Kiona will walk you through exactly what
+          to expect.
         </motion.p>
 
         {/* ── Video container ── */}
@@ -244,7 +247,11 @@ export default function PreApplicationVideoSection() {
                       <motion.div
                         aria-hidden
                         animate={{ scale: [1, 1.85], opacity: [0.55, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeOut",
+                        }}
                         style={{
                           position: "absolute",
                           width: "88px",
@@ -257,7 +264,12 @@ export default function PreApplicationVideoSection() {
                       <motion.div
                         aria-hidden
                         animate={{ scale: [1, 1.55], opacity: [0.4, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeOut",
+                          delay: 0.5,
+                        }}
                         style={{
                           position: "absolute",
                           width: "88px",
