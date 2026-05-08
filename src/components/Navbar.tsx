@@ -43,7 +43,7 @@ const Navbar = () => {
             alt="ElevateKBL logo"
             className="w-8 h-8 rounded-lg"
           />
-          ElevateKBL
+          LimitlessKBL
         </motion.a>
 
         {/* Desktop */}
