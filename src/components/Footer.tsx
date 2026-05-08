@@ -32,7 +32,7 @@ const Footer = () => (
       transition={{ duration: 0.6 }}
     >
       <h3 className="font-heading text-2xl font-bold text-primary-foreground mb-2">
-        ElevateKBL
+        LimitlessKBL
       </h3>
       <p className="font-body text-sm text-primary-foreground/70 mb-2">
         Built for Women Who Mean Business 💛
@@ -59,7 +59,7 @@ const Footer = () => (
       </div>
       <p className="font-body text-xs text-primary-foreground/40 inline-flex items-center gap-1">
         Made with <Heart size={12} className="gold-accent" /> ©{" "}
-        {new Date().getFullYear()} ElevateKBL
+        {new Date().getFullYear()} LimitlessKBL
       </p>
     </motion.div>
   </footer>

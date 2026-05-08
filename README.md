@@ -1,6 +1,6 @@
-# ElevateKBL
+# LimitlessKBL
 
-Landing page for **ElevateKBL** — a high-ticket sales coaching platform helping women build 6-figure businesses.
+Landing page for **LimitlessKBL** — a high-ticket sales coaching platform helping women build 6-figure businesses.
 
 ## Tech Stack
 
@@ -22,13 +22,13 @@ npm run dev
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start local dev server at `localhost:8080` |
-| `npm run build` | Production build |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint |
-| `npm run test` | Run tests |
+| Command           | Description                                |
+| ----------------- | ------------------------------------------ |
+| `npm run dev`     | Start local dev server at `localhost:8080` |
+| `npm run build`   | Production build                           |
+| `npm run preview` | Preview production build locally           |
+| `npm run lint`    | Run ESLint                                 |
+| `npm run test`    | Run tests                                  |
 
 ## Deployment
 
